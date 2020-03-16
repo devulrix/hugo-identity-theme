@@ -18,5 +18,19 @@
       {{ end }}
     </ul>
   {{ end }} 
+  {{ with .Site.Params.imprint }}
+    <ul class="credit copyright">
+      {{ range . }}
+        <li>{{ .text }}<a href="{{ .link }}">{{ .title }}</a></li>
+      {{ end }}
+    </ul>
+  {{ end }}
+  {{ with .Site.Params.gdpr }}
+  <ul class="credit copyright">
+    {{ range . }}
+      <li>{{ .text }}<a href="{{ .link }}">{{ .title }}</a></li>
+    {{ end }}
+  </ul>
+{{ end }}
 
 </footer>
